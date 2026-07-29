@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agenda — Calendário</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="agenda">
+    <header class="agenda__header">
+      <button class="nav-btn" id="btn-prev" aria-label="Mês anterior">&#8592;</button>
+      <div class="agenda__title">
+        <h1 id="mes-nome">Julho</h1>
+        <span id="ano-num">2026</span>
+      </div>
+      <button class="nav-btn" id="btn-next" aria-label="Próximo mês">&#8594;</button>
+    </header>
+
+    <div class="agenda__weekdays">
+      <span>Do</span><span>Se</span><span>Te</span><span>Qa</span><span>Qi</span><span>Se</span><span>Sa</span>
+    </div>
+
+    <div class="agenda__grid" id="grid"></div>
+
+    <button class="btn-hoje" id="btn-hoje">Ir para hoje</button>
+  </main>
+
+  <aside class="painel" id="painel" hidden>
+    <div class="painel__conteudo">
+      <div class="painel__topo">
+        <h2 id="painel-data">—</h2>
+        <button class="painel__fechar" id="btn-fechar" aria-label="Fechar">&times;</button>
+      </div>
+      <ul class="painel__lista" id="lista-eventos"></ul>
+      <form id="form-evento" class="painel__form">
+        <div class="cores-picker-wrap">
+          <span class="cores-picker__label">Cor do evento</span>
+          <div class="cores-picker" id="cores-picker" role="radiogroup" aria-label="Cor do evento"></div>
+        </div>
+        <div class="painel__form-linha">
+          <input type="text" id="input-titulo" placeholder="Adicionar evento..." autocomplete="off" required />
+          <button type="submit">+</button>
+        </div>
+      </form>
+    </div>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+</html>
